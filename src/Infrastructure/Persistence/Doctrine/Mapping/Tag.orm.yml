@@ -1,0 +1,88 @@
+App\Domain\Model\Entity\Tag:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineTagRepository
+  table: tags
+  schema: yabe
+  readOnly: false
+  gedmo:
+    soft_deleteable:
+      field_name: deletedAt
+      time_aware: true
+  id:
+    id:
+      type: uuid
+      generator:
+          strategy: CUSTOM
+      customIdGenerator:
+          class: Ramsey\Uuid\Doctrine\UuidGenerator
+  fields:
+    title:
+      type: string
+      length: 2000
+      nullable: false
+    slug:
+      type: string
+      length: 191
+      nullable: false
+      unique: true
+    description:
+      type: text
+      nullable: true
+    featureImage:
+      type: string
+      length: 2000
+      nullable: true
+      column: feature_image
+    visibility:
+      type: string
+      length: 50
+      nullable: false
+      options:
+        default: public
+    metaTitle:
+      type: string
+      length: 2000
+      nullable: true
+      column: meta_title
+    metaDescription:
+      type: string
+      length: 2000
+      nullable: true
+      column: meta_description
+    createdAt:
+      type: datetime
+      nullable: true
+      column: created_at
+      gedmo:
+        timestampable:
+          on: create
+    updatedAt:
+      type: datetime
+      nullable: true
+      column: updated_at
+      gedmo:
+        timestampable:
+          on: update
+    deletedAt:
+      type: datetime
+      nullable: true
+      column: deleted_at
+  oneToMany:
+    children:
+      targetEntity: Tag
+      mappedBy: parent
+  manyToMany:
+    parent:
+      targetEntity: Tag
+      inversedBy: children
+      joinTable:
+        name: tag_hierarchy
+        joinColumns:
+          parent_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          child_id:
+            referencedColumnName: id
+    posts:
+      targetEntity: Post
+      mappedBy: tags

@@ -1,0 +1,112 @@
+id: 2bb59715-afa7-40e9-ad1d-682b410d452b
+title: Making your site private
+slug: private-sites
+mobiledoc: >
+  {"version":"0.3.1","markups":[],"atoms":[],"cards":[["card-markdown",{"cardName":"card-markdown","markdown":"Sometimes you might want to put your site behind closed doors\n\nIf you've got a publication that you don't want the world to see yet because it's not ready to launch, you can hide your Ghost site behind a simple shared pass-phrase.\n\nYou can toggle this preference on at the bottom of Ghost's General Settings\n\n![private](https://casper.ghost.org/v1.0.0/images/private.png)\n\nGhost will give you a short, randomly generated pass-phrase which you can share with anyone who needs access to the site while you're working on it. While this setting is enabled, all search engine optimisation features will be switched off to help keep the site off the radar.\n\nDo remember though, this is *not* secure authentication. You shouldn't rely on this feature for protecting important private data. It's just a simple, shared pass-phrase for very basic privacy."}]],"sections":[[10,0]]}
+html: >
+  <div class="kg-card-markdown"><p>Sometimes you might want to put your site behind closed doors</p>
+  <p>If you've got a publication that you don't want the world to see yet because it's not ready to launch, you can hide your Ghost site behind a simple shared pass-phrase.</p>
+  <p>You can toggle this preference on at the bottom of Ghost's General Settings</p>
+  <p><img src="https://casper.ghost.org/v1.0.0/images/private.png" alt="private"></p>
+  <p>Ghost will give you a short, randomly generated pass-phrase which you can share with anyone who needs access to the site while you're working on it. While this setting is enabled, all search engine optimisation features will be switched off to help keep the site off the radar.</p>
+  <p>Do remember though, this is <em>not</em> secure authentication. You shouldn't rely on this feature for protecting important private data. It's just a simple, shared pass-phrase for very basic privacy.</p>
+  </div>
+amp:
+plaintext: >
+  Sometimes you might want to put your site behind closed doors
+
+  If you've got a publication that you don't want the world to see yet because
+  it's not ready to launch, you can hide your Ghost site behind a simple shared
+  pass-phrase.
+
+  You can toggle this preference on at the bottom of Ghost's General Settings
+
+
+
+  Ghost will give you a short, randomly generated pass-phrase which you can share
+  with anyone who needs access to the site while you're working on it. While this
+  setting is enabled, all search engine optimisation features will be switched off
+  to help keep the site off the radar.
+
+  Do remember though, this is not  secure authentication. You shouldn't rely on
+  this feature for protecting important private data. It's just a simple, shared
+  pass-phrase for very basic privacy.
+featureImage: https://casper.ghost.org/v1.0.0/images/locked.jpg
+featured: 0
+page: 0
+status: published
+locale:
+visibility: public
+author:
+  id: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  name: Ghost
+  slug: ghost
+  authAccessToken:
+  authId:
+  password: $2a$10$Cphy18Ay96Za8rSvrSCOv.GaXhuq3xTUN0v6mxRlTqtA1aGsW8E/O
+  email: ghost-author@example.com
+  profileImage: //www.gravatar.com/avatar/9390099dfeeffab3f169cdf18c4f2ffe?s=250&d=mm&r=x
+  coverImage: https://casper.ghost.org/v1.0.0/images/blog-cover.jpg
+  bio: >
+    You can delete this user to remove all the welcome posts
+  website: https://www.facebook.com/samyranavela
+  location: 'Orsay, France'
+  facebook: https://www.facebook.com/samyranavela
+  twitter: https://www.twitter.com/samyranavela
+  accessibility: >
+    {"nightShift":true}
+  status: active
+  locale:
+  visibility: public
+  metaTitle:
+  metaDescription:
+  tour: >
+    ["getting-started","using-the-editor","static-post","featured-post","upload-a-theme"]
+  lastSeen: 2018-02-03 14:26:58
+  createdAt: 2018-01-27 11:31:08
+  createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  updatedAt: 2018-02-03 16:04:15
+  updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  deletedAt: 2018-02-03 16:04:15
+  roles: []
+  permissions: []
+  posts: []
+metaTitle:
+metaDescription:
+customExcerpt:
+codeInjectionHead:
+codeInjectionFoot:
+ogImage:
+ogTitle:
+ogDescription:
+twitterImage:
+twitterTitle:
+twitterDescription:
+customTemplate:
+publishedAt: 2018-01-27 11:31:07
+createdAt: 2018-01-27 11:31:07
+updatedAt: 2018-01-27 11:31:07
+deletedAt:
+publishedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+deletedBy:
+tags:
+  -
+    id: 32ec4dea-cd48-4028-86bc-b6a4e3de4a8a
+    title: Getting Started
+    slug: getting-started
+    description:
+    featureImage:
+    visibility: public
+    metaTitle: Getting Started
+    metaDescription:
+    createdAt: 2018-01-27 11:31:08
+    createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    updatedAt: 2018-01-27 11:31:08
+    updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    deletedAt:
+    deletedBy:
+    children: []
+    parent: []
+    posts: []

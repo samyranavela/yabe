@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="site-header outer">
+        <div class="inner">
+            {% include 'partials/site_nav.html.twig' %}
+        </div>
+    </header>
+
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+
+            <section class="error-message">
+                <h1 class="error-code">{{ status_code }}</h1>
+                <p class="error-description">{{ status_text }}</p>
+                <a class="error-link" href="{{ url('home_index') }}">Go to the front page →</a>
+            </section>
+
+            {% block error_details %}{% endblock %}
+
+        </div>
+    </main>
+{% endblock %}

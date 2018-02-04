@@ -1,3 +1,6 @@
+imports:
+    - { resource: services/repositories/memory.yaml }
+
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
@@ -19,9 +22,20 @@ services:
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\Controller\:
-        resource: '../src/Controller'
+    App\Infrastructure\Api\Controller\:
+        resource: '../src/Infrastructure/Api/Controller'
         tags: ['controller.service_arguments']
+    App\Infrastructure\UI\Controller\:
+        resource: '../src/Infrastructure/UI/Controller'
+        tags: ['controller.service_arguments']
+    App\Infrastructure\UI\Controller\ExceptionController:
+        public: true
+        arguments:
+            $debug: '%kernel.debug%'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    Gedmo\SoftDeleteable\SoftDeleteableListener:
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }

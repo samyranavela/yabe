@@ -1,0 +1,132 @@
+id: 46bce747-6431-4226-afad-332131de315a
+title: Managing Ghost users
+slug: managing-users
+mobiledoc: >
+  {"version":"0.3.1","markups":[],"atoms":[],"cards":[["card-markdown",{"cardName":"card-markdown","markdown":"Ghost has a number of different user roles for your team\n\n\n### Authors\n\nThe base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own posts. Authors are **trusted** users. If you don't trust users to be allowed to publish their own posts, you shouldn't invite them to Ghost admin.\n\n\n### Editors\n\nEditors are the 2nd user level in Ghost. Editors can do everything that an Author can do, but they can also edit and publish the posts of others - as well as their own. Editors can also invite new authors to the site.\n\n\n### Administrators\n\nThe top user level in Ghost is Administrator. Again, administrators can do everything that Authors and Editors can do, but they can also edit all site settings and data, not just content. Additionally, administrators have full access to invite, manage or remove any other user of the site.\n\n\n### The Owner\n\nThere is only ever one owner of a Ghost site. The owner is a special user which has all the same permissions as an Administrator, but with two exceptions: The Owner can never be deleted. And in some circumstances the owner will have access to additional special settings if applicable — for example, billing details, if using Ghost(Pro).\n\n---\n\nIt's a good idea to ask all of your users to fill out their user profiles, including bio and social links. These will populate rich structured data for posts and generally create more opportunities for themes to fully populate their design. "}]],"sections":[[10,0]]}
+html: >
+  <div class="kg-card-markdown"><p>Ghost has a number of different user roles for your team</p>
+  <h3 id="authors">Authors</h3>
+  <p>The base user level in Ghost is an author. Authors can write posts, edit their own posts, and publish their own posts. Authors are <strong>trusted</strong> users. If you don't trust users to be allowed to publish their own posts, you shouldn't invite them to Ghost admin.</p>
+  <h3 id="editors">Editors</h3>
+  <p>Editors are the 2nd user level in Ghost. Editors can do everything that an Author can do, but they can also edit and publish the posts of others - as well as their own. Editors can also invite new authors to the site.</p>
+  <h3 id="administrators">Administrators</h3>
+  <p>The top user level in Ghost is Administrator. Again, administrators can do everything that Authors and Editors can do, but they can also edit all site settings and data, not just content. Additionally, administrators have full access to invite, manage or remove any other user of the site.</p>
+  <h3 id="theowner">The Owner</h3>
+  <p>There is only ever one owner of a Ghost site. The owner is a special user which has all the same permissions as an Administrator, but with two exceptions: The Owner can never be deleted. And in some circumstances the owner will have access to additional special settings if applicable — for example, billing details, if using Ghost(Pro).</p>
+  <hr>
+  <p>It's a good idea to ask all of your users to fill out their user profiles, including bio and social links. These will populate rich structured data for posts and generally create more opportunities for themes to fully populate their design.</p>
+  </div>
+amp:
+plaintext: >
+  Ghost has a number of different user roles for your team
+
+  Authors
+  The base user level in Ghost is an author. Authors can write posts, edit their
+  own posts, and publish their own posts. Authors are trusted  users. If you don't
+  trust users to be allowed to publish their own posts, you shouldn't invite them
+  to Ghost admin.
+
+  Editors
+  Editors are the 2nd user level in Ghost. Editors can do everything that an
+  Author can do, but they can also edit and publish the posts of others - as well
+  as their own. Editors can also invite new authors to the site.
+
+  Administrators
+  The top user level in Ghost is Administrator. Again, administrators can do
+  everything that Authors and Editors can do, but they can also edit all site
+  settings and data, not just content. Additionally, administrators have full
+  access to invite, manage or remove any other user of the site.
+
+  The Owner
+  There is only ever one owner of a Ghost site. The owner is a special user which
+  has all the same permissions as an Administrator, but with two exceptions: The
+  Owner can never be deleted. And in some circumstances the owner will have access
+  to additional special settings if applicable — for example, billing details, if
+  using Ghost(Pro).
+
+
+  --------------------------------------------------------------------------------
+
+  It's a good idea to ask all of your users to fill out their user profiles,
+  including bio and social links. These will populate rich structured data for
+  posts and generally create more opportunities for themes to fully populate their
+  design.
+featureImage: https://casper.ghost.org/v1.0.0/images/team.jpg
+featured: 0
+page: 0
+status: published
+locale:
+visibility: public
+author:
+  id: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  name: Ghost
+  slug: ghost
+  authAccessToken:
+  authId:
+  password: $2a$10$Cphy18Ay96Za8rSvrSCOv.GaXhuq3xTUN0v6mxRlTqtA1aGsW8E/O
+  email: ghost-author@example.com
+  profileImage: //www.gravatar.com/avatar/9390099dfeeffab3f169cdf18c4f2ffe?s=250&d=mm&r=x
+  coverImage: https://casper.ghost.org/v1.0.0/images/blog-cover.jpg
+  bio: >
+    You can delete this user to remove all the welcome posts
+  website: https://www.facebook.com/samyranavela
+  location: 'Orsay, France'
+  facebook: https://www.facebook.com/samyranavela
+  twitter: https://www.twitter.com/samyranavela
+  accessibility: >
+    {"nightShift":true}
+  status: active
+  locale:
+  visibility: public
+  metaTitle:
+  metaDescription:
+  tour: >
+    ["getting-started","using-the-editor","static-post","featured-post","upload-a-theme"]
+  lastSeen: 2018-02-03 14:26:58
+  createdAt: 2018-01-27 11:31:08
+  createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  updatedAt: 2018-02-03 16:04:15
+  updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  deletedAt: 2018-02-03 16:04:15
+  roles: []
+  permissions: []
+  posts: []
+metaTitle:
+metaDescription:
+customExcerpt:
+codeInjectionHead:
+codeInjectionFoot:
+ogImage:
+ogTitle:
+ogDescription:
+twitterImage:
+twitterTitle:
+twitterDescription:
+customTemplate:
+publishedAt: 2018-01-27 11:31:07
+createdAt: 2018-01-27 11:31:07
+updatedAt: 2018-01-27 11:31:07
+deletedAt:
+publishedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+deletedBy:
+tags:
+  -
+    id: 32ec4dea-cd48-4028-86bc-b6a4e3de4a8a
+    title: Getting Started
+    slug: getting-started
+    description:
+    featureImage:
+    visibility: public
+    metaTitle: Getting Started
+    metaDescription:
+    createdAt: 2018-01-27 11:31:08
+    createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    updatedAt: 2018-01-27 11:31:08
+    updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    deletedAt:
+    deletedBy:
+    children: []
+    parent: []
+    posts: []

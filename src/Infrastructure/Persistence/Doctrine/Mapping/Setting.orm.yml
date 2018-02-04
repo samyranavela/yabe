@@ -1,0 +1,52 @@
+App\Domain\Model\Entity\Setting:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineSettingRepository
+  table: settings
+  schema: yabe
+  readOnly: false
+  id:
+    id:
+      type: uuid
+      generator:
+          strategy: CUSTOM
+      customIdGenerator:
+          class: Ramsey\Uuid\Doctrine\UuidGenerator
+  fields:
+    key:
+      type: string
+      length: 24
+      nullable: false
+      unique: true
+    value:
+      type: text
+      nullable: false
+    type:
+      type: string
+      length: 50
+      options:
+        default: core
+    createdAt:
+      type: datetime
+      nullable: true
+      column: created_at
+      gedmo:
+        timestampable:
+          on: create
+    updatedAt:
+      type: datetime
+      nullable: true
+      column: updated_at
+      gedmo:
+        timestampable:
+          on: update
+  manyToOne:
+    createdBy:
+      targetEntity: User
+      joinColumn:
+        name: created_by
+        referencedColumnName: id
+    updatedBy:
+      targetEntity: User
+      joinColumn:
+        name: updated_by
+        referencedColumnName: id

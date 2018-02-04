@@ -1,0 +1,144 @@
+id: 5f663f48-5a29-4c79-b3ec-e4d0f59743bb
+title: Setting up your own Ghost theme
+slug: themes
+mobiledoc: >
+  {"version":"0.3.1","markups":[],"atoms":[],"cards":[["card-markdown",{"cardName":"card-markdown","markdown":"Creating a totally custom design for your publication\n\nGhost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. However, Ghost can also be completely themed to suit your needs. Rather than just giving you a few basic settings which act as a poor proxy for code, we just let you write code.\n\nThere are a huge range of both free and premium pre-built themes which you can get from the [Ghost Theme Marketplace](http://marketplace.ghost.org), or you can simply create your own from scratch.\n\n[![marketplace](https://casper.ghost.org/v1.0.0/images/marketplace.jpg)](http://marketplace.ghost.org)\n\n> Anyone can write a completely custom Ghost theme, with just some solid knowledge of HTML and CSS\n\nGhost themes are written with a templating language called handlebars, which has a bunch of dynamic helpers to insert your data into template files. Like `{{author.name}}`, for example, outputs the name of the current author.\n\nThe best way to learn how to write your own Ghost theme is to have a look at [the source code for Casper](https://github.com/TryGhost/Casper), which is heavily commented and should give you a sense of how everything fits together.\n\n- `default.hbs` is the main template file, all contexts will load inside this file unless specifically told to use a different template.\n- `post.hbs` is the file used in the context of viewing a post.\n- `index.hbs` is the file used in the context of viewing the home page.\n- and so on\n\nWe've got [full and extensive theme documentation](http://themes.ghost.org/docs/about) which outlines every template file, context and helper that you can use.\n\nIf you want to chat with other people making Ghost themes to get any advice or help, there's also a **#themes** channel in our [public Slack community](https://slack.ghost.org) which we always recommend joining!"}]],"sections":[[10,0]]}
+html: >
+  <div class="kg-card-markdown"><p>Creating a totally custom design for your publication</p>
+  <p>Ghost comes with a beautiful default theme called Casper, which is designed to be a clean, readable publication layout and can be easily adapted for most purposes. However, Ghost can also be completely themed to suit your needs. Rather than just giving you a few basic settings which act as a poor proxy for code, we just let you write code.</p>
+  <p>There are a huge range of both free and premium pre-built themes which you can get from the <a href="http://marketplace.ghost.org">Ghost Theme Marketplace</a>, or you can simply create your own from scratch.</p>
+  <p><a href="http://marketplace.ghost.org"><img src="https://casper.ghost.org/v1.0.0/images/marketplace.jpg" alt="marketplace"></a></p>
+  <blockquote>
+  <p>Anyone can write a completely custom Ghost theme, with just some solid knowledge of HTML and CSS</p>
+  </blockquote>
+  <p>Ghost themes are written with a templating language called handlebars, which has a bunch of dynamic helpers to insert your data into template files. Like <code>{{author.name}}</code>, for example, outputs the name of the current author.</p>
+  <p>The best way to learn how to write your own Ghost theme is to have a look at <a href="https://github.com/TryGhost/Casper">the source code for Casper</a>, which is heavily commented and should give you a sense of how everything fits together.</p>
+  <ul>
+  <li><code>default.hbs</code> is the main template file, all contexts will load inside this file unless specifically told to use a different template.</li>
+  <li><code>post.hbs</code> is the file used in the context of viewing a post.</li>
+  <li><code>index.hbs</code> is the file used in the context of viewing the home page.</li>
+  <li>and so on</li>
+  </ul>
+  <p>We've got <a href="http://themes.ghost.org/docs/about">full and extensive theme documentation</a> which outlines every template file, context and helper that you can use.</p>
+  <p>If you want to chat with other people making Ghost themes to get any advice or help, there's also a <strong>#themes</strong> channel in our <a href="https://slack.ghost.org">public Slack community</a> which we always recommend joining!</p>
+  </div>
+amp:
+plaintext: >
+  Creating a totally custom design for your publication
+
+  Ghost comes with a beautiful default theme called Casper, which is designed to
+  be a clean, readable publication layout and can be easily adapted for most
+  purposes. However, Ghost can also be completely themed to suit your needs.
+  Rather than just giving you a few basic settings which act as a poor proxy for
+  code, we just let you write code.
+
+  There are a huge range of both free and premium pre-built themes which you can
+  get from the Ghost Theme Marketplace [http://marketplace.ghost.org], or you can
+  simply create your own from scratch.
+
+    [http://marketplace.ghost.org]
+
+  Anyone can write a completely custom Ghost theme, with just some solid knowledge
+  of HTML and CSS
+
+  Ghost themes are written with a templating language called handlebars, which has
+  a bunch of dynamic helpers to insert your data into template files. Like
+  {{author.name}}, for example, outputs the name of the current author.
+
+  The best way to learn how to write your own Ghost theme is to have a look at
+  the
+  source code for Casper [https://github.com/TryGhost/Casper], which is heavily
+  commented and should give you a sense of how everything fits together.
+
+   * default.hbs  is the main template file, all contexts will load inside this
+     file unless specifically told to use a different template.
+   * post.hbs  is the file used in the context of viewing a post.
+   * index.hbs  is the file used in the context of viewing the home page.
+   * and so on
+
+  We've got full and extensive theme documentation
+  [http://themes.ghost.org/docs/about]  which outlines every template file,
+  context and helper that you can use.
+
+  If you want to chat with other people making Ghost themes to get any advice or
+  help, there's also a #themes  channel in our public Slack community
+  [https://slack.ghost.org]  which we always recommend joining!
+featureImage: https://casper.ghost.org/v1.0.0/images/design.jpg
+featured: 0
+page: 0
+status: published
+locale:
+visibility: public
+author:
+  id: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  name: Ghost
+  slug: ghost
+  authAccessToken:
+  authId:
+  password: $2a$10$Cphy18Ay96Za8rSvrSCOv.GaXhuq3xTUN0v6mxRlTqtA1aGsW8E/O
+  email: ghost-author@example.com
+  profileImage: //www.gravatar.com/avatar/9390099dfeeffab3f169cdf18c4f2ffe?s=250&d=mm&r=x
+  coverImage: https://casper.ghost.org/v1.0.0/images/blog-cover.jpg
+  bio: >
+    You can delete this user to remove all the welcome posts
+  website: https://www.facebook.com/samyranavela
+  location: 'Orsay, France'
+  facebook: https://www.facebook.com/samyranavela
+  twitter: https://www.twitter.com/samyranavela
+  accessibility: >
+    {"nightShift":true}
+  status: active
+  locale:
+  visibility: public
+  metaTitle:
+  metaDescription:
+  tour: >
+    ["getting-started","using-the-editor","static-post","featured-post","upload-a-theme"]
+  lastSeen: 2018-02-03 14:26:58
+  createdAt: 2018-01-27 11:31:08
+  createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  updatedAt: 2018-02-03 16:04:15
+  updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  deletedAt: 2018-02-03 16:04:15
+  roles: []
+  permissions: []
+  posts: []
+metaTitle:
+metaDescription:
+customExcerpt:
+codeInjectionHead:
+codeInjectionFoot:
+ogImage:
+ogTitle:
+ogDescription:
+twitterImage:
+twitterTitle:
+twitterDescription:
+customTemplate:
+publishedAt: 2018-01-27 11:31:07
+createdAt: 2018-01-27 11:31:07
+updatedAt: 2018-01-27 11:31:07
+deletedAt:
+publishedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+deletedBy:
+tags:
+  -
+    id: 32ec4dea-cd48-4028-86bc-b6a4e3de4a8a
+    title: Getting Started
+    slug: getting-started
+    description:
+    featureImage:
+    visibility: public
+    metaTitle: Getting Started
+    metaDescription:
+    createdAt: 2018-01-27 11:31:08
+    createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    updatedAt: 2018-01-27 11:31:08
+    updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    deletedAt:
+    deletedBy:
+    children: []
+    parent: []
+    posts: []

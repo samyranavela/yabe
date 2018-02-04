@@ -1,0 +1,148 @@
+App\Domain\Model\Entity\User:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineUserRepository
+  table: users
+  schema: yabe
+  readOnly: false
+  gedmo:
+    soft_deleteable:
+      field_name: deletedAt
+      time_aware: true
+  id:
+    id:
+      type: uuid
+      generator:
+          strategy: CUSTOM
+      customIdGenerator:
+          class: Ramsey\Uuid\Doctrine\UuidGenerator
+  fields:
+    name:
+      type: string
+      length: 191
+      nullable: false
+      unique: true
+    slug:
+      type: string
+      length: 191
+      nullable: false
+      unique: true
+    authAccessToken:
+      type: string
+      length: 24
+      nullable: true
+      column: auth_access_token
+    authId:
+      type: string
+      length: 24
+      nullable: true
+      column: auth_id
+    password:
+      type: string
+      length: 60
+      nullable: false
+    email:
+      type: string
+      length: 191
+      nullable: true
+      unique: true
+    profileImage:
+      type: string
+      length: 2000
+      nullable: true
+      column: profile_image
+    coverImage:
+      type: string
+      length: 2000
+      nullable: true
+      column: cover_image
+    bio:
+      type: text
+      nullable: true
+    website:
+      type: string
+      length: 2000
+      nullable: true
+    location:
+      type: text
+      nullable: true
+    facebook:
+      type: string
+      length: 2000
+      nullable: true
+    twitter:
+      type: string
+      length: 2000
+      nullable: true
+    accessibility:
+      type: text
+      nullable: true
+    status:
+      type: string
+      length: 50
+      nullable: false
+      options:
+        default: active
+    locale:
+      type: string
+      length: 6
+      nullable: true
+    visibility:
+      type: string
+      length: 50
+      nullable: false
+      options:
+        default: public
+    metaTitle:
+      type: string
+      length: 2000
+      nullable: true
+      column: meta_title
+    metaDescription:
+      type: string
+      length: 2000
+      nullable: true
+      column: meta_description
+    tour:
+      type: text
+      nullable: true
+    lastSeen:
+      type: datetime
+      nullable: true
+      column: last_seen
+    createdAt:
+      type: datetime
+      nullable: true
+      column: created_at
+      gedmo:
+        timestampable:
+          on: create
+    updatedAt:
+      type: datetime
+      nullable: true
+      column: updated_at
+      gedmo:
+        timestampable:
+          on: update
+    deletedAt:
+      type: datetime
+      nullable: true
+      column: deleted_at
+  oneToMany:
+    posts:
+      targetEntity: Post
+      mappedBy: author
+  manyToMany:
+    roles:
+      targetEntity: Role
+      joinTable:
+        name: users_roles
+        joinColumns:
+          user_id:
+            referencedColumnName: id
+    permissions:
+      targetEntity: Permission
+      joinTable:
+        name: permissions_users
+        joinColumns:
+          user_id:
+            referencedColumnName: id

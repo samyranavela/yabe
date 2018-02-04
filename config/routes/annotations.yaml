@@ -1,0 +1,8 @@
+api:
+    resource: ../../src/Infrastructure/Api/Controller/
+    type: annotation
+    prefix: /api
+ui:
+    resource: ../../src/Infrastructure/UI/Controller/
+    type: annotation
+    prefix: /

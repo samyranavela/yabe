@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% import "macros/plural.html.twig" as macros %}
+
+{% block body %}
+    <header class="site-header outer {% if tag.featureImage %}"
+            style="background-image: url({{ tag.featureImage }}){% else %}no-cover{% endif %}">
+        <div class="inner">
+            {% include 'partials/site_nav.html.twig' with { 'settings.navigation': settings.navigation } %}
+            <div class="site-header-content">
+                <h1 class="site-title">{{ tag.title }}</h1>
+                <h2 class="site-description">
+
+                    {% if tag.description %}
+                        {{ tag.description }}
+                    {% else %}
+                        A collection of {{ macros.plural(tag.posts.count, 'posts', '%d post', '%d posts') }}
+                    {% endif %}
+                </h2>
+            </div>
+        </div>
+    </header>
+
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <div class="post-feed">
+                {% for post in tag.posts %}
+                    {% include 'partials/post_card.html.twig' with {'post': post} %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

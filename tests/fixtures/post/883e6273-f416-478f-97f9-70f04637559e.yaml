@@ -1,0 +1,176 @@
+id: 883e6273-f416-478f-97f9-70f04637559e
+title: Organising your content with tags
+slug: using-tags
+mobiledoc: >
+  {"version":"0.3.1","markups":[],"atoms":[],"cards":[["card-markdown",{"cardName":"card-markdown","markdown":"Ghost has a single, powerful organisational taxonomy, called tags.\n\nIt doesn't matter whether you want to call them categories, tags, boxes, or anything else. You can think of Ghost tags a lot like Gmail labels. By tagging posts with one or more keyword, you can organise articles into buckets of related content.\n\n\n## Basic tagging\n\nWhen you write a post, you can assign tags to help differentiate between categories of content. For example, you might tag some posts with `News` and other posts with `Cycling`, which would create two distinct categories of content listed on `/tag/news/` and `/tag/cycling/`, respectively.\n\nIf you tag a post with both `News` *and* `Cycling` - then it appears in both sections.\n\nTag archives are like dedicated home-pages for each category of content that you have. They have their own pages, their own RSS feeds, and can support their own cover images and meta data.\n\n\n## The primary tag\n\nInside the Ghost editor, you can drag and drop tags into a specific order. The first tag in the list is always given the most importance, and some themes will only display the primary tag (the first tag in the list) by default. So you can add the most important tag which you want to show up in your theme, but also add a bunch of related tags which are less important.\n\n==**News**, Cycling, Bart Stevens, Extreme Sports==\n\nIn this example, **News** is the primary tag which will be displayed by the theme, but the post will also still receive all the other tags, and show up in their respective archives.\n\n\n## Private tags\n\nSometimes you may want to assign a post a specific tag, but you don't necessarily want that tag appearing in the theme or creating an archive page. In Ghost, hashtags are private and can be used for special styling.\n\nFor example, if you sometimes publish posts with video content - you might want your theme to adapt and get rid of the sidebar for these posts, to give more space for an embedded video to fill the screen. In this case, you could use private tags to tell your theme what to do.\n\n==**News**, Cycling, #video==\n\nHere, the theme would assign the post publicly displayed tags of `News`, and `Cycling` - but it would also keep a private record of the post being tagged with `#video`.\n\nIn your theme, you could then look for private tags conditionally and give them special formatting:\n\n```\n{{#post}}\n    {{#has tag=\"#video\"}}\n        ...markup for a nice big video post layout...\n    {{else}}\n        ...regular markup for a post...\n    {{/has}}\n{{/post}}\n```\n\nYou can find documentation for theme development techniques like this and many more over on Ghost's extensive [theme documentation](https://themes.ghost.org/)."}]],"sections":[[10,0]]}
+html: >
+  <div class="kg-card-markdown"><p>Ghost has a single, powerful organisational taxonomy, called tags.</p>
+  <p>It doesn't matter whether you want to call them categories, tags, boxes, or anything else. You can think of Ghost tags a lot like Gmail labels. By tagging posts with one or more keyword, you can organise articles into buckets of related content.</p>
+  <h2 id="basictagging">Basic tagging</h2>
+  <p>When you write a post, you can assign tags to help differentiate between categories of content. For example, you might tag some posts with <code>News</code> and other posts with <code>Cycling</code>, which would create two distinct categories of content listed on <code>/tag/news/</code> and <code>/tag/cycling/</code>, respectively.</p>
+  <p>If you tag a post with both <code>News</code> <em>and</em> <code>Cycling</code> - then it appears in both sections.</p>
+  <p>Tag archives are like dedicated home-pages for each category of content that you have. They have their own pages, their own RSS feeds, and can support their own cover images and meta data.</p>
+  <h2 id="theprimarytag">The primary tag</h2>
+  <p>Inside the Ghost editor, you can drag and drop tags into a specific order. The first tag in the list is always given the most importance, and some themes will only display the primary tag (the first tag in the list) by default. So you can add the most important tag which you want to show up in your theme, but also add a bunch of related tags which are less important.</p>
+  <p><mark><strong>News</strong>, Cycling, Bart Stevens, Extreme Sports</mark></p>
+  <p>In this example, <strong>News</strong> is the primary tag which will be displayed by the theme, but the post will also still receive all the other tags, and show up in their respective archives.</p>
+  <h2 id="privatetags">Private tags</h2>
+  <p>Sometimes you may want to assign a post a specific tag, but you don't necessarily want that tag appearing in the theme or creating an archive page. In Ghost, hashtags are private and can be used for special styling.</p>
+  <p>For example, if you sometimes publish posts with video content - you might want your theme to adapt and get rid of the sidebar for these posts, to give more space for an embedded video to fill the screen. In this case, you could use private tags to tell your theme what to do.</p>
+  <p><mark><strong>News</strong>, Cycling, #video</mark></p>
+  <p>Here, the theme would assign the post publicly displayed tags of <code>News</code>, and <code>Cycling</code> - but it would also keep a private record of the post being tagged with <code>#video</code>.</p>
+  <p>In your theme, you could then look for private tags conditionally and give them special formatting:</p>
+  <pre><code>{{#post}}
+      {{#has tag=&quot;#video&quot;}}
+          ...markup for a nice big video post layout...
+      {{else}}
+          ...regular markup for a post...
+      {{/has}}
+  {{/post}}
+  </code></pre>
+  <p>You can find documentation for theme development techniques like this and many more over on Ghost's extensive <a href="https://themes.ghost.org/">theme documentation</a>.</p>
+  </div>
+amp:
+plaintext: >
+  Ghost has a single, powerful organisational taxonomy, called tags.
+
+  It doesn't matter whether you want to call them categories, tags, boxes, or
+  anything else. You can think of Ghost tags a lot like Gmail labels. By tagging
+  posts with one or more keyword, you can organise articles into buckets of
+  related content.
+
+  Basic tagging
+  When you write a post, you can assign tags to help differentiate between
+  categories of content. For example, you might tag some posts with News  and
+  other posts with Cycling, which would create two distinct categories of content
+  listed on /tag/news/  and /tag/cycling/, respectively.
+
+  If you tag a post with both News  and  Cycling  - then it appears in both
+  sections.
+
+  Tag archives are like dedicated home-pages for each category of content that you
+  have. They have their own pages, their own RSS feeds, and can support their own
+  cover images and meta data.
+
+  The primary tag
+  Inside the Ghost editor, you can drag and drop tags into a specific order. The
+  first tag in the list is always given the most importance, and some themes will
+  only display the primary tag (the first tag in the list) by default. So you can
+  add the most important tag which you want to show up in your theme, but also add
+  a bunch of related tags which are less important.
+
+  News, Cycling, Bart Stevens, Extreme Sports
+
+  In this example, News  is the primary tag which will be displayed by the theme,
+  but the post will also still receive all the other tags, and show up in their
+  respective archives.
+
+  Private tags
+  Sometimes you may want to assign a post a specific tag, but you don't
+  necessarily want that tag appearing in the theme or creating an archive page. In
+  Ghost, hashtags are private and can be used for special styling.
+
+  For example, if you sometimes publish posts with video content - you might want
+  your theme to adapt and get rid of the sidebar for these posts, to give more
+  space for an embedded video to fill the screen. In this case, you could use
+  private tags to tell your theme what to do.
+
+  News, Cycling, #video
+
+  Here, the theme would assign the post publicly displayed tags of News, and
+  Cycling  - but it would also keep a private record of the post being tagged with
+   #video.
+
+  In your theme, you could then look for private tags conditionally and give them
+  special formatting:
+
+  {{#post}}
+      {{#has tag="#video"}}
+          ...markup for a nice big video post layout...
+      {{else}}
+          ...regular markup for a post...
+      {{/has}}
+  {{/post}}
+
+
+  You can find documentation for theme development techniques like this and many
+  more over on Ghost's extensive theme documentation [https://themes.ghost.org/].
+featureImage: https://casper.ghost.org/v1.0.0/images/tags.jpg
+featured: 0
+page: 0
+status: published
+locale:
+visibility: public
+author:
+  id: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  name: Ghost
+  slug: ghost
+  authAccessToken:
+  authId:
+  password: $2a$10$Cphy18Ay96Za8rSvrSCOv.GaXhuq3xTUN0v6mxRlTqtA1aGsW8E/O
+  email: ghost-author@example.com
+  profileImage: //www.gravatar.com/avatar/9390099dfeeffab3f169cdf18c4f2ffe?s=250&d=mm&r=x
+  coverImage: https://casper.ghost.org/v1.0.0/images/blog-cover.jpg
+  bio: >
+    You can delete this user to remove all the welcome posts
+  website: https://www.facebook.com/samyranavela
+  location: 'Orsay, France'
+  facebook: https://www.facebook.com/samyranavela
+  twitter: https://www.twitter.com/samyranavela
+  accessibility: >
+    {"nightShift":true}
+  status: active
+  locale:
+  visibility: public
+  metaTitle:
+  metaDescription:
+  tour: >
+    ["getting-started","using-the-editor","static-post","featured-post","upload-a-theme"]
+  lastSeen: 2018-02-03 14:26:58
+  createdAt: 2018-01-27 11:31:08
+  createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  updatedAt: 2018-02-03 16:04:15
+  updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  deletedAt: 2018-02-03 16:04:15
+  roles: []
+  permissions: []
+  posts: []
+metaTitle:
+metaDescription:
+customExcerpt:
+codeInjectionHead:
+codeInjectionFoot:
+ogImage:
+ogTitle:
+ogDescription:
+twitterImage:
+twitterTitle:
+twitterDescription:
+customTemplate:
+publishedAt: 2018-01-27 11:31:07
+createdAt: 2018-01-27 11:31:07
+updatedAt: 2018-01-27 11:31:07
+deletedAt:
+publishedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+deletedBy:
+tags:
+  -
+    id: 32ec4dea-cd48-4028-86bc-b6a4e3de4a8a
+    title: Getting Started
+    slug: getting-started
+    description:
+    featureImage:
+    visibility: public
+    metaTitle: Getting Started
+    metaDescription:
+    createdAt: 2018-01-27 11:31:08
+    createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    updatedAt: 2018-01-27 11:31:08
+    updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    deletedAt:
+    deletedBy:
+    children: []
+    parent: []
+    posts: []

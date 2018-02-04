@@ -1,0 +1,46 @@
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {% if app.request.get('_route') == 'home_index' %}
+            {% if settings.logo %}
+                <a class="site-nav-logo" href="{{ app.request.uri }}">
+                    <img src="{{ settings.logo }}" alt="{{ settings.title }}"/>
+                </a>
+            {% else %}
+                <a class="site-nav-logo" href="{{ app.request.uri }}">{{ settings.title }}</a>
+            {% endif %}
+        {% endif %}
+        {% if settings.navigation %}
+            <ul class="nav" role="menu">
+                {% for link in settings.navigation %}
+                    {% if link.url == '/' %}
+                        <li class="nav-home nav-current" role="menuitem">
+                            <a href="{{ link.url }}">{{ link.label }}</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-page" role="menuitem">
+                            <a href="{{ link.url }}">{{ link.label }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            {% if settings.facebook %}
+                <a class="social-link social-link-fb" href="{{ settings.facebook }}" target="_blank"
+                   rel="noopener">{% include 'partials/icons/facebook.svg' %}</a>
+            {% endif %}
+            {% if settings.twitter %}
+                <a class="social-link social-link-tw" href="{{ settings.twitter }}" target="_blank"
+                   rel="noopener">{% include 'partials/icons/twitter.svg' %}</a>
+            {% endif %}
+        </div>
+        {% if subscribers %}
+        <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        {% else %}
+        <a class="rss-button" href="{{ url('rss') }}" target="_blank"
+           rel="noopener">{% include 'partials/icons/rss.svg' %}</a>
+        {% endif %}
+    </div>
+</nav>

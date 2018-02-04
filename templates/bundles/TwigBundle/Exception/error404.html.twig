@@ -1,0 +1,15 @@
+{% extends '@Twig/Exception/error.html.twig' %}
+
+{% block error_details %}
+    {% if posts is not empty %}
+        <aside class="outer">
+            <div class="inner">
+                <div class="post-feed">
+                    {% for post in posts %}
+                        {% include 'partials/post_card.html.twig' with { 'post': post } %}
+                    {% endfor %}
+                </div>
+            </div>
+        </aside>
+    {% endif %}
+{% endblock %}

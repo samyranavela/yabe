@@ -1,0 +1,18 @@
+<section class="author-card">
+    {% if author.profileImage %}
+        <img class="author-profile-image" src="{{ author.profileImage }}" alt="{{ author.name }}"/>
+    {% endif %}
+    <section class="author-card-content">
+        <h4 class="author-card-name">
+            <a href="{{ url('author_index', { 'slug': author.slug }) }}">{{ author.name }}</a>
+        </h4>
+        {% if author.bio %}
+            <p>{{ author.bio }}</p>
+        {% else %}
+            <p>Read <a href="{{ url('author_index', { 'slug': author.slug }) }}">more posts</a> by this author.</p>
+        {% endif %}
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="{{ url('author_index', { 'slug': author.slug }) }}">Read More</a>
+</div>

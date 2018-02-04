@@ -1,0 +1,52 @@
+App\Domain\Model\Entity\Role:
+  type: entity
+  repositoryClass: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineRoleRepository
+  table: roles
+  schema: yabe
+  readOnly: false
+  gedmo:
+    soft_deleteable:
+      field_name: deletedAt
+      time_aware: true
+  id:
+    id:
+      type: uuid
+      generator:
+          strategy: CUSTOM
+      customIdGenerator:
+          class: Ramsey\Uuid\Doctrine\UuidGenerator
+  fields:
+    name:
+      type: string
+      length: 50
+      nullable: false
+      unique: true
+    description:
+      type: text
+      nullable: true
+    createdAt:
+      type: datetime
+      nullable: true
+      column: created_at
+      gedmo:
+        timestampable:
+          on: create
+    updatedAt:
+      type: datetime
+      nullable: true
+      column: updated_at
+      gedmo:
+        timestampable:
+          on: update
+    deletedAt:
+      type: datetime
+      nullable: true
+      column: deleted_at
+  manyToMany:
+    permissions:
+      targetEntity: Permission
+      joinTable:
+        name: permissions_roles
+        joinColumns:
+          role_id:
+            referencedColumnName: id

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <header class="site-header outer">
+        <div class="inner">
+            {% include 'partials/site_nav.html.twig' %}
+        </div>
+    </header>
+
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <article class="post-full {% if not post.featureImage %}no-image{% endif %}">
+                <header class="post-full-header">
+                    <h1 class="post-full-title">{{ post.title }}</h1>
+                </header>
+
+                {% if post.featureImage %}
+                    <figure class="post-full-image" style="background-image: url({{ post.featureImage.url }})">
+                    </figure>
+                {% endif %}
+
+                <section class="post-full-content">
+                    {{ post.html|raw }}
+                </section>
+            </article>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+      $(function () {
+        var $postContent = $('.post-full-content')
+        $postContent.fitVids()
+      })
+    </script>
+{% endblock %}

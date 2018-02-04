@@ -1,0 +1,194 @@
+{% extends 'base.html.twig' %}
+{% import "macros/plural.html.twig" as macros %}
+
+{% block body %}
+<header class="site-header outer">
+    <div class="inner">
+        {% include 'partials/site_nav.html.twig' %}
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <article class="post-full {% if not post.featureImage %}no-image{% endif %}">
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date"
+                          datetime="{{ post.publishedAt|date('d F Y') }}">{{ post.publishedAt|date('d F Y') }}</time>
+                    {% if post.primaryTag %}
+                        <span class="date-divider">/</span> <a
+                            href="{{ url('tag_index', { 'slug': post.primaryTag.slug }) }}">{{ post.primaryTag.title }}</a>
+                    {% endif %}
+                </section>
+                <h1 class="post-full-title">{{ post.title }}</h1>
+            </header>
+
+            {% if post.featureImage %}
+                <figure class="post-full-image" style="background-image: url({{ post.featureImage.url }})">
+                </figure>
+            {% endif %}
+
+            <section class="post-full-content">
+                {{ post.html | raw }}
+            </section>
+
+            {% if subscribers %}
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to {{ settings.title }}</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    {% verbatim %}{{subscribe_form placeholder="youremailexample.com"}}{% endverbatim %}
+                </section>
+            {% endif %}
+
+            {% if post.author %}
+                <footer class="post-full-footer">
+                    {% include 'partials/author_card.html.twig' with { 'author': post.author } %}
+                </footer>
+            {% endif %}
+
+            {% if settings.disqus %}
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                </section>
+            {% endif %}
+        </article>
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            {% if post.primaryTag %}
+                <article class="read-next-card"
+                        {% if post.primaryTag.featureImage %}
+                            style="background-image: url({{ post.primaryTag.featureImage.url }})"
+                        {% else %}
+                            {% if settings.cover_image %}
+                                style="background-image: url({{ settings.cover_image }})"
+                            {% endif %}
+                        {% endif %}
+                >
+                    <header class="read-next-card-header">
+                        <small class="read-next-card-header-sitetitle">&mdash; {{ settings.title }} &mdash;</small>
+                        {% if post.primaryTag %}
+                            <h3 class="read-next-card-header-title">
+                                <a href="{{ url('tag_index', { 'slug': post.primaryTag.slug }) }}">{{ post.primaryTag.title }}</a>
+                            </h3>
+                        {% endif %}
+                    </header>
+                    <div class="read-next-divider">{% include 'partials/icons/infinity.svg' %}</div>
+                    {% if post.primaryTag.posts %}
+                        <div class="read-next-card-content">
+                            <ul>
+                                {% for related in post.primaryTag.posts %}
+                                    <li>
+                                        <a href="{{ url('post_index', { 'slug': related.slug }) }}">{{ related.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                    <footer class="read-next-card-footer">
+                        <a href="{{ url('tag_index', { 'slug': post.primaryTag.slug }) }}">
+                            {{ macros.plural(post.primaryTag.posts.count, 'No posts', '%d post', 'See all %d posts') }}
+                            →
+                        </a>
+                    </footer>
+                </article>
+            {% endif %}
+
+            {% if post.next %}
+                {% include 'partials/post_card.html.twig' with { 'post': post.next } %}
+            {% endif %}
+
+            {% if post.previous %}
+                {% include 'partials/post_card.html.twig' with { 'post': post.previous } %}
+            {% endif %}
+
+        </div>
+    </div>
+</aside>
+
+{% include 'partials/floating_header.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% if settings.disqus %}
+        <script>
+          var disqus_config = function () {
+            this.page.url = '{{ app.request.uri }}'
+            this.page.identifier = 'ghost-{{ settings.disqus.comment_id }}'
+          };
+          (function () {
+            var d = document, s = d.createElement('script')
+            s.src = '{{ settings.disqus.url }}'
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s)
+          })()
+        </script>
+    {% endif %}
+    <script>
+      // NOTE: Scroll performance is poor in Safari
+      // - this appears to be due to the events firing much more slowly in Safari.
+      //   Dropping the scroll event and using only a raf loop results in smoother
+      //   scrolling but continuous processing even when not scrolling
+      $(document).ready(function () {
+        // Start fitVids
+        var $postContent = $('.post-full-content')
+        $postContent.fitVids()
+        // End fitVids
+
+        var progressBar = document.querySelector('progress')
+        var header = document.querySelector('.floating-header')
+        var title = document.querySelector('.post-full-title')
+
+        var lastScrollY = window.scrollY
+        var lastWindowHeight = window.innerHeight
+        var lastDocumentHeight = $(document).height()
+        var ticking = false
+
+        function onScroll () {
+          lastScrollY = window.scrollY
+          requestTick()
+        }
+
+        function onResize () {
+          lastWindowHeight = window.innerHeight
+          lastDocumentHeight = $(document).height()
+          requestTick()
+        }
+
+        function requestTick () {
+          if (!ticking) {
+            requestAnimationFrame(update)
+          }
+          ticking = true
+        }
+
+        function update () {
+          var trigger = title.getBoundingClientRect().top + window.scrollY
+          var triggerOffset = title.offsetHeight + 35
+          var progressMax = lastDocumentHeight - lastWindowHeight
+
+          // show/hide floating header
+          if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active')
+          }
+          else {
+            header.classList.remove('floating-active')
+          }
+
+          progressBar.setAttribute('max', progressMax)
+          progressBar.setAttribute('value', lastScrollY)
+
+          ticking = false
+        }
+
+        window.addEventListener('scroll', onScroll, {passive: true})
+        window.addEventListener('resize', onResize, false)
+
+        update()
+      })
+    </script>
+{% endblock %}

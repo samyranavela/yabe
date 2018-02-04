@@ -1,0 +1,30 @@
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="{{ app.request.uri }}">
+            {% if settings.icon is not empty %}
+                <img src="{{ settings.icon }}" alt="{{ settings.title }} icon"/>
+            {% endif %}
+            <span>{{ settings.title }}</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">{{ post.title }}</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this {% include 'partials/icons/point.svg' %}</div>
+        <a class="floating-header-share-tw"
+           href="https://twitter.com/share?text={{ post.title }}&amp;url={{ url('post_index', { 'slug': post.slug }) }}"
+           onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            {% include 'partials/icons/twitter.svg' %}
+        </a>
+        <a class="floating-header-share-fb"
+           href="https://www.facebook.com/sharer/sharer.php?u={{ url('post_index', { 'slug': post.slug }) }}"
+           onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            {% include 'partials/icons/facebook.svg' %}
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>

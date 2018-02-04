@@ -1,0 +1,9 @@
+{% macro plural(count, empty, singular, plural) %}
+    {% if count > 1 %}
+        {{ plural|format(count) }}
+    {% elseif count == 1 %}
+        {{ singular|format(count) }}
+    {% else %}
+        {{ empty|format(count) }}
+    {% endif %}
+{% endmacro %}

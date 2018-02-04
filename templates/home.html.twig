@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <header class="site-header outer {% if settings.cover_image %}"
+            style="background-image: url({{ settings.cover_image }}){% else %}no-cover{% endif %}">
+        <div class="inner">
+            <div class="site-header-content">
+                <h1 class="site-title">
+                    {% if settings.logo %}
+                        <img class="site-logo" src="{{ settings.logo }}" alt="{{ settings.title }}"/>
+                    {% else %}
+                        {{ settings.title }}
+                    {% endif %}
+                </h1>
+                <h2 class="site-description">{{ settings.description }}</h2>
+            </div>
+            {% include "partials/site_nav.html.twig" %}
+        </div>
+    </header>
+
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <div class="post-feed">
+                {% for post in posts %}
+
+                    {% include "partials/post_card.html.twig" %}
+
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

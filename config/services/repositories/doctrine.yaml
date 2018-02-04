@@ -1,0 +1,31 @@
+services:
+    App\Domain\Model\Repository\PermissionRepository:
+        class: App\Infrastructure\Persistence\Doctrine\Repository\DoctrinePermissionRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Domain\Model\Entity\Permission
+        public: false
+    App\Domain\Model\Repository\PostRepository:
+        class: App\Infrastructure\Persistence\Doctrine\Repository\DoctrinePostRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Domain\Model\Entity\Post
+        public: false
+    App\Domain\Model\Repository\RoleRepository:
+        class: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineRoleRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Domain\Model\Entity\Role
+        public: false
+    App\Domain\Model\Repository\TagRepository:
+        class: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineTagRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Domain\Model\Entity\Tag
+        public: false
+    App\Domain\Model\Repository\UserRepository:
+        class: App\Infrastructure\Persistence\Doctrine\Repository\DoctrineUserRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - App\Domain\Model\Entity\User
+        public: false

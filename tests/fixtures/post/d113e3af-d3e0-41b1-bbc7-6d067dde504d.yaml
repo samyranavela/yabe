@@ -1,0 +1,209 @@
+id: d113e3af-d3e0-41b1-bbc7-6d067dde504d
+title: Advanced Markdown tips
+slug: advanced-markdown
+mobiledoc: >
+  {"version":"0.3.1","markups":[],"atoms":[],"cards":[["card-markdown",{"cardName":"card-markdown","markdown":"There are lots of powerful things you can do with the Ghost editor\n\nIf you've gotten pretty comfortable with [all the basics](/the-editor/) of writing in Ghost, then you may enjoy some more advanced tips about the types of things you can do with Markdown!\n\nAs with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.\n\n\n## Special formatting\n\nAs well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:\n\n+ ~~strike through~~\n+ ==highlight==\n+ \\*escaped characters\\*\n\n\n## Writing code blocks\n\nThere are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, `like this`. Larger snippets of code can be displayed across multiple lines using triple back ticks:\n\n```\n.my-link {\n    text-decoration: underline;\n}\n```\n\nIf you want to get really fancy, you can even add syntax highlighting using [Prism.js](http://prismjs.com/).\n\n\n## Full bleed images\n\nOne neat trick which you can use in Markdown to distinguish between different types of images is to add a `#hash` value to the end of the source URL, and then target images containing the hash with special styling. For example:\n\n![walking](https://casper.ghost.org/v1.0.0/images/walking.jpg#full)\n\nwhich is styled with...\n\n```\nimg[src$=\"#full\"] {\n    max-width: 100vw;\n}\n```\n\nThis creates full-bleed images in the Casper theme, which stretch beyond their usual boundaries right up to the edge of the window. Every theme handles these types of things slightly differently, but it's a great trick to play with if you want to have a variety of image sizes and styles.\n\n\n## Reference lists\n\n**The quick brown [fox][1], jumped over the lazy [dog][2].**\n\n[1]: https://en.wikipedia.org/wiki/Fox \"Wikipedia: Fox\"\n[2]: https://en.wikipedia.org/wiki/Dog \"Wikipedia: Dog\"\n\nAnother way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.\n\n\n## Creating footnotes\n\nThe quick brown fox[^1] jumped over the lazy dog[^2].\n\n[^1]: Foxes are red\n[^2]: Dogs are usually not red\n\nFootnotes are a great way to add additional contextual details when appropriate. Ghost will automatically add footnote content to the very end of your post.\n\n\n## Full HTML\n\nPerhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Ghost editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0\" frameborder=\"0\" allowfullscreen></iframe>\n"}]],"sections":[[10,0]]}
+html: >
+  <div class="kg-card-markdown"><p>There are lots of powerful things you can do with the Ghost editor</p>
+  <p>If you've gotten pretty comfortable with <a href="/the-editor/">all the basics</a> of writing in Ghost, then you may enjoy some more advanced tips about the types of things you can do with Markdown!</p>
+  <p>As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.</p>
+  <h2 id="specialformatting">Special formatting</h2>
+  <p>As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:</p>
+  <ul>
+  <li><s>strike through</s></li>
+  <li><mark>highlight</mark></li>
+  <li>*escaped characters*</li>
+  </ul>
+  <h2 id="writingcodeblocks">Writing code blocks</h2>
+  <p>There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, <code>like this</code>. Larger snippets of code can be displayed across multiple lines using triple back ticks:</p>
+  <pre><code>.my-link {
+      text-decoration: underline;
+  }
+  </code></pre>
+  <p>If you want to get really fancy, you can even add syntax highlighting using <a href="http://prismjs.com/">Prism.js</a>.</p>
+  <h2 id="fullbleedimages">Full bleed images</h2>
+  <p>One neat trick which you can use in Markdown to distinguish between different types of images is to add a <code>#hash</code> value to the end of the source URL, and then target images containing the hash with special styling. For example:</p>
+  <p><img src="https://casper.ghost.org/v1.0.0/images/walking.jpg#full" alt="walking"></p>
+  <p>which is styled with...</p>
+  <pre><code>img[src$=&quot;#full&quot;] {
+      max-width: 100vw;
+  }
+  </code></pre>
+  <p>This creates full-bleed images in the Casper theme, which stretch beyond their usual boundaries right up to the edge of the window. Every theme handles these types of things slightly differently, but it's a great trick to play with if you want to have a variety of image sizes and styles.</p>
+  <h2 id="referencelists">Reference lists</h2>
+  <p><strong>The quick brown <a href="https://en.wikipedia.org/wiki/Fox" title="Wikipedia: Fox">fox</a>, jumped over the lazy <a href="https://en.wikipedia.org/wiki/Dog" title="Wikipedia: Dog">dog</a>.</strong></p>
+  <p>Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.</p>
+  <h2 id="creatingfootnotes">Creating footnotes</h2>
+  <p>The quick brown fox<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> jumped over the lazy dog<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>.</p>
+  <p>Footnotes are a great way to add additional contextual details when appropriate. Ghost will automatically add footnote content to the very end of your post.</p>
+  <h2 id="fullhtml">Full HTML</h2>
+  <p>Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Ghost editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+  <hr class="footnotes-sep">
+  <section class="footnotes">
+  <ol class="footnotes-list">
+  <li id="fn1" class="footnote-item"><p>Foxes are red <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+  </li>
+  <li id="fn2" class="footnote-item"><p>Dogs are usually not red <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+  </li>
+  </ol>
+  </section>
+  </div>
+amp:
+plaintext: >
+  There are lots of powerful things you can do with the Ghost editor
+
+  If you've gotten pretty comfortable with all the basics [/the-editor/]  of
+  writing in Ghost, then you may enjoy some more advanced tips about the types of
+  things you can do with Markdown!
+
+  As with the last post about the editor, you'll want to be actually editing this
+  post as you read it so that you can see all the Markdown code we're using.
+
+  Special formatting
+  As well as bold and italics, you can also use some other special formatting in
+  Markdown when the need arises, for example:
+
+   * strike through
+   * highlight
+   * *escaped characters*
+
+  Writing code blocks
+  There are two types of code elements which can be inserted in Markdown, the
+  first is inline, and the other is block. Inline code is formatted by wrapping
+  any word or words in back-ticks, like this. Larger snippets of code can be
+  displayed across multiple lines using triple back ticks:
+
+  .my-link {
+      text-decoration: underline;
+  }
+
+
+  If you want to get really fancy, you can even add syntax highlighting using
+  Prism.js [http://prismjs.com/].
+
+  Full bleed images
+  One neat trick which you can use in Markdown to distinguish between different
+  types of images is to add a #hash  value to the end of the source URL, and then
+  target images containing the hash with special styling. For example:
+
+
+
+  which is styled with...
+
+  img[src$="#full"] {
+      max-width: 100vw;
+  }
+
+
+  This creates full-bleed images in the Casper theme, which stretch beyond their
+  usual boundaries right up to the edge of the window. Every theme handles these
+  types of things slightly differently, but it's a great trick to play with if you
+  want to have a variety of image sizes and styles.
+
+  Reference lists
+  The quick brown fox [https://en.wikipedia.org/wiki/Fox], jumped over the lazy
+  dog [https://en.wikipedia.org/wiki/Dog].
+
+  Another way to insert links in markdown is using reference lists. You might want
+  to use this style of linking to cite reference material in a Wikipedia-style.
+  All of the links are listed at the end of the document, so you can maintain full
+  separation between content and its source or reference.
+
+  Creating footnotes
+  The quick brown fox[1]  jumped over the lazy dog[2].
+
+  Footnotes are a great way to add additional contextual details when appropriate.
+  Ghost will automatically add footnote content to the very end of your post.
+
+  Full HTML
+  Perhaps the best part of Markdown is that you're never limited to just Markdown.
+  You can write HTML directly in the Ghost editor and it will just work as HTML
+  usually does. No limits! Here's a standard YouTube embed code as an example:
+
+
+  --------------------------------------------------------------------------------
+
+   1. Foxes are red ↩︎
+
+
+   2. Dogs are usually not red ↩︎
+featureImage: https://casper.ghost.org/v1.0.0/images/advanced.jpg
+featured: 0
+page: 0
+status: published
+locale:
+visibility: public
+author:
+  id: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  name: Ghost
+  slug: ghost
+  authAccessToken:
+  authId:
+  password: $2a$10$Cphy18Ay96Za8rSvrSCOv.GaXhuq3xTUN0v6mxRlTqtA1aGsW8E/O
+  email: ghost-author@example.com
+  profileImage: //www.gravatar.com/avatar/9390099dfeeffab3f169cdf18c4f2ffe?s=250&d=mm&r=x
+  coverImage: https://casper.ghost.org/v1.0.0/images/blog-cover.jpg
+  bio: >
+    You can delete this user to remove all the welcome posts
+  website: https://www.facebook.com/samyranavela
+  location: 'Orsay, France'
+  facebook: https://www.facebook.com/samyranavela
+  twitter: https://www.twitter.com/samyranavela
+  accessibility: >
+    {"nightShift":true}
+  status: active
+  locale:
+  visibility: public
+  metaTitle:
+  metaDescription:
+  tour: >
+    ["getting-started","using-the-editor","static-post","featured-post","upload-a-theme"]
+  lastSeen: 2018-02-03 14:26:58
+  createdAt: 2018-01-27 11:31:08
+  createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  updatedAt: 2018-02-03 16:04:15
+  updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+  deletedAt: 2018-02-03 16:04:15
+  roles: []
+  permissions: []
+  posts: []
+metaTitle:
+metaDescription:
+customExcerpt:
+codeInjectionHead:
+codeInjectionFoot:
+ogImage:
+ogTitle:
+ogDescription:
+twitterImage:
+twitterTitle:
+twitterDescription:
+customTemplate:
+publishedAt: 2018-01-27 11:31:07
+createdAt: 2018-01-27 11:31:07
+updatedAt: 2018-01-27 11:31:07
+deletedAt:
+publishedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+deletedBy:
+tags:
+  -
+    id: 32ec4dea-cd48-4028-86bc-b6a4e3de4a8a
+    title: Getting Started
+    slug: getting-started
+    description:
+    featureImage:
+    visibility: public
+    metaTitle: Getting Started
+    metaDescription:
+    createdAt: 2018-01-27 11:31:08
+    createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    updatedAt: 2018-01-27 11:31:08
+    updatedBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+    deletedAt:
+    deletedBy:
+    children: []
+    parent: []
+    posts: []

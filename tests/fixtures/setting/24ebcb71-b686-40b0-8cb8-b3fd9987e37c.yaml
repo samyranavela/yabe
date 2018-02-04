@@ -1,0 +1,9 @@
+id: 24ebcb71-b686-40b0-8cb8-b3fd9987e37c
+key: navigation
+value: >
+  [{"label":"Home","url":""},{"label":"Post","url":"/welcome"},{"label":"Page","url":"/the-editor"},{"label":"Tag","url":"/tag/getting-started"},{"label":"Author","url":"/author/ghost"},{"label":"Rss","url":"/feeds/rss.xml"}]
+type: blog
+createdAt: 2018-01-27 11:31:13
+createdBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70
+updateAt: 2018-01-27 11:31:13
+updateBy: 20ca3921-3fd6-460f-b77f-0c465aaaff70

@@ -1,0 +1,25 @@
+services:
+    App\Domain\Model\Repository\PermissionRepository:
+        class: App\Infrastructure\Persistence\Memory\Repository\MemoryPermissionRepository
+        arguments: [ '%kernel.project_dir%/tests/fixtures/permission' ]
+        public: false
+    App\Domain\Model\Repository\PostRepository:
+        class: App\Infrastructure\Persistence\Memory\Repository\MemoryPostRepository
+        arguments: [ '%kernel.project_dir%/tests/fixtures/post' ]
+        public: false
+    App\Domain\Model\Repository\SettingRepository:
+        class: App\Infrastructure\Persistence\Memory\Repository\MemorySettingRepository
+        arguments: [ '%kernel.project_dir%/tests/fixtures/setting' ]
+        public: false
+    App\Domain\Model\Repository\RoleRepository:
+        class: App\Infrastructure\Persistence\Memory\Repository\MemoryRoleRepository
+        arguments: [ '%kernel.project_dir%/tests/fixtures/role' ]
+        public: false
+    App\Domain\Model\Repository\TagRepository:
+        class: App\Infrastructure\Persistence\Memory\Repository\MemoryTagRepository
+        arguments: [ '%kernel.project_dir%/tests/fixtures/tag' ]
+        public: false
+    App\Domain\Model\Repository\UserRepository:
+        class: App\Infrastructure\Persistence\Memory\Repository\MemoryUserRepository
+        arguments: [ '%kernel.project_dir%/tests/fixtures/user' ]
+        public: false

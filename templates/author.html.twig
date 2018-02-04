@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% import "macros/plural.html.twig" as macros %}
+
+{% block body %}
+    <header class="site-header outer {% if author.coverImage %}"
+            style="background-image: url({{ author.coverImage }}){% else %}no-cover{% endif %}">
+        <div class="inner">
+            {% include 'partials/site_nav.html.twig' %}
+            <div class="site-header-content">
+                {% if author %}
+                    <img class="author-profile-image" src="{{ author.profileImage }}" alt="{{ author.name }}"/>
+                    <h1 class="site-title">{{ author.name }}</h1>
+                    {% if author.bio %}
+                        <h2 class="author-bio">{{ author.bio }}</h2>
+                    {% endif %}
+                    <div class="author-meta">
+                        {% if author.location %}
+                            <div class="author-location">{{ author.location }} <span class="bull">&bull;</span></div>
+                        {% endif %}
+                        <div class="author-stats">{{ macros.plural(author.posts.count, 'No posts', '%d post', '%d posts') }}
+                            <span class="bull">&bull;</span></div>
+                        {% if author.website %}
+                            <a class="social-link social-link-wb" href="{{ author.website }}" target="_blank"
+                               rel="noopener">{% include 'partials/icons/website.svg' %}</a>
+                        {% endif %}
+                        {% if author.twitter %}
+                            <a class="social-link social-link-tw" href="{{ author.twitter }}" target="_blank"
+                               rel="noopener">{% include 'partials/icons/twitter.svg' %}</a>
+                        {% endif %}
+                        {% if author.facebook %}
+                            <a class="social-link social-link-fb" href="{{ author.facebook }}" target="_blank"
+                               rel="noopener">{% include 'partials/icons/facebook.svg' %}</a>
+                        {% endif %}
+                        <a class="social-link social-link-rss"
+                           href="https://feedly.com/i/subscription/feed/{{ app.request.uri }}/rss/" target="_blank"
+                           rel="noopener">{% include 'partials/icons/rss.svg' %}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <main id="site-main" class="site-main outer" role="main">
+        <div class="inner">
+            <div class="post-feed">
+                {% for post in author.posts %}
+                    {% include'partials/post_card.html.twig' with { 'post': post } %}
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
